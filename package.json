@@ -1,0 +1,48 @@
+{
+  "name": "grunt-xsltproc",
+  "description": "Apply XSLT stylesheets to XML documents.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/andybluntish/grunt-xsltproc",
+  "author": {
+    "name": "Andy Stanford-Bluntish",
+    "email": "andy@bluntish.net",
+    "url": "http://andy.bluntish.net"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@://github.com/andybluntish/grunt-xsltproc"
+  },
+  "bugs": {
+    "url": "https://github.com/andybluntish/grunt-xsltproc/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/andybluntish/grunt-xsltproc/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt": "~0.4.1"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.1"
+  },
+  "keywords": [
+    "gruntplugin",
+    "xslt",
+    "xml",
+    "html",
+    "compile",
+    "preprocessor"
+  ]
+}
