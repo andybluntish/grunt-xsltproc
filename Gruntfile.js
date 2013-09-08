@@ -30,28 +30,20 @@ module.exports = function(grunt) {
 
     // Configuration to be run (and then tested).
     xsltproc: {
-      default_options: {
-        options: {
-        },
-        files: {
-          'tmp/default_options': ['test/fixtures/testing', 'test/fixtures/123'],
-        },
+      options: {
+        template: 'test/fixtures/compiler.xsl'
       },
-      custom_options: {
-        options: {
-          separator: ': ',
-          punctuation: ' !!!',
-        },
+      compile: {
         files: {
-          'tmp/custom_options': ['test/fixtures/testing', 'test/fixtures/123'],
-        },
-      },
+          'tmp/compile.html': ['test/fixtures/compile.xml']
+        }
+      }
     },
 
     // Unit tests.
     nodeunit: {
       tests: ['test/*_test.js'],
-    },
+    }
 
   });
 
