@@ -10,41 +10,58 @@
 
 module.exports = function(grunt) {
 
-  // Please see the Grunt documentation for more information regarding task
-  // creation: http://gruntjs.com/creating-tasks
-
   grunt.registerMultiTask('xsltproc', 'Apply XSLT stylesheets to XML documents.', function() {
-    // Merge task-specific and/or target-specific options with these defaults.
-    var options = this.options({
-      punctuation: '.',
-      separator: ', '
-    });
+    var options = this.options();
 
-    // Iterate over all specified file groups.
-    this.files.forEach(function(f) {
-      // Concat specified files.
-      var src = f.src.filter(function(filepath) {
-        // Warn on and remove invalid source files (if nonull was set).
-        if (!grunt.file.exists(filepath)) {
+    // Check for the stylesheet file
+    if ( !options.stylesheet || !grunt.file.exists(options.stylesheet) ) {
+      grunt.log.error('Stylesheet file "' + options.stylesheet + '" not found.');
+      return false;
+    }
+
+    var done = this.async();
+
+    // Loop over each file in order
+    grunt.util.async.forEachSeries(this.files, function(file, next) {
+      var args = [];
+
+      // Construct arguments from file paths
+      file.src.filter(function(filepath) {
+
+        // Remove invalid source files
+        if ( !grunt.file.exists(filepath) ) {
           grunt.log.warn('Source file "' + filepath + '" not found.');
           return false;
         } else {
           return true;
         }
       }).map(function(filepath) {
-        // Read file source.
-        return grunt.file.read(filepath);
-      }).join(grunt.util.normalizelf(options.separator));
 
-      // Handle options.
-      src += options.punctuation;
+        // Add file paths to the args
+        args.unshift('xsltproc');
+        args.push('--output', file.dest);
+        args.push(options.stylesheet);
+        args.push(filepath);
+      });
 
-      // Write the destination file.
-      grunt.file.write(f.dest, src);
+      // Make sure grunt creates the destination folders
+      grunt.file.write(file.dest, '');
 
-      // Print a success message.
-      grunt.log.writeln('File "' + f.dest + '" created.');
-    });
+      // Run
+      var xslt = grunt.util.spawn({
+        cmd: args.shift(),
+        args: args
+      }, function(error, result, code) {
+        if (code === 127) { // command not found
+          return grunt.warn('You need to have xsltproc installed and in your PATH for this task to work.');
+        }
+        next(error);
+      });
+
+      xslt.stdout.pipe(process.stdout);
+      xslt.stderr.pipe(process.stderr);
+    }, done);
+
   });
 
 };

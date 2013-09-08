@@ -37,48 +37,48 @@ grunt.initConfig({
 
 ### Options
 
-#### options.separator
+#### options.stylesheet
 Type: `String`
-Default value: `',  '`
 
-A string value that is used to do something with whatever.
-
-#### options.punctuation
-Type: `String`
-Default value: `'.'`
-
-A string value that is used to do something else with whatever else.
+Path to the XSLT stylesheet to apply to the files.
 
 ### Usage Examples
 
-#### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
-
-```js
-grunt.initConfig({
-  xsltproc: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-})
-```
-
-#### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
+#### Single file
 
 ```js
 grunt.initConfig({
   xsltproc: {
     options: {
-      separator: ': ',
-      punctuation: ' !!!',
+      stylesheet: 'test/fixtures/compiler.xsl'
     },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
+    compile: {
+      files: {
+        'tmp/compile.html': ['test/fixtures/compile.xml']
+      }
+    }
+  }
+})
+```
+
+#### Directory of files
+
+```js
+grunt.initConfig({
+  xsltproc: {
+    options: {
+      stylesheet: 'test/fixtures/compiler.xsl'
     },
-  },
+    compile: {
+      files: [{
+        expand: true,
+        cwd: 'test/fixtures',
+        src: '*.xml',
+        dest: 'tmp',
+        ext: '.html'
+      }]
+    }
+  }
 })
 ```
 
@@ -86,4 +86,5 @@ grunt.initConfig({
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
-_(Nothing yet)_
+
+ * 2013-09-08   v0.1.0   Initial release.
