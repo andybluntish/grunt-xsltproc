@@ -31,16 +31,16 @@ module.exports = function(grunt) {
     // Configuration to be run (and then tested).
     xsltproc: {
       options: {
-        stylesheet: 'test/fixtures/compiler.xsl'
+        stylesheet: 'test/fixtures/template.xsl'
       },
       compile: {
         files: {
-          'tmp/compile.html': ['test/fixtures/compile.xml']
+          'tmp/compile.html': ['test/fixtures/data.xml']
         }
       },
       stringparams: {
         files: {
-          'tmp/stringparams.html': ['test/fixtures/compile.xml']
+          'tmp/stringparams.html': ['test/fixtures/data.xml']
         },
         options: {
           stringparams: {
