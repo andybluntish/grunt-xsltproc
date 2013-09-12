@@ -37,6 +37,16 @@ module.exports = function(grunt) {
         files: {
           'tmp/compile.html': ['test/fixtures/compile.xml']
         }
+      },
+      stringparams: {
+        files: {
+          'tmp/stringparams.html': ['test/fixtures/compile.xml']
+        },
+        options: {
+          stringparams: {
+            'title': 'My Music'
+          }
+        }
       }
     },
 

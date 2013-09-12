@@ -1,14 +1,16 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   <xsl:output method="html" omit-xml-declaration="yes" encoding="utf-8" indent="yes" media-type="text/html" />
 
+  <xsl:param name="title" select="/catalogue/@title" />
+
   <xsl:template match="/catalogue">
     <html>
     <head>
-      <title><xsl:value-of select="@title" /></title>
+      <title><xsl:value-of select="$title" /></title>
     </head>
     <body>
       <header role="banner">
-        <h1><xsl:value-of select="@title" /></h1>
+        <h1><xsl:value-of select="$title" /></h1>
       </header>
       <div role="main">
         <ul class="albums">

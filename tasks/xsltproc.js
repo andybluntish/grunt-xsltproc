@@ -37,8 +37,18 @@ module.exports = function(grunt) {
         }
       }).map(function(filepath) {
 
-        // Add file paths to the args
+        // Call xsltproc
         args.unshift('xsltproc');
+
+        // Add string params
+        if (options.stringparams) {
+          grunt.util._.forOwn(options.stringparams, function(value, key) {
+            args.push('--stringparam');
+            args.push(key, value);
+          });
+        }
+
+        // Add file paths to the args
         args.push('--output', file.dest);
         args.push(options.stylesheet);
         args.push(filepath);

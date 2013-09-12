@@ -10,6 +10,16 @@ exports.xsltproc = {
     test.equal(result, expected, 'should compile XML to HTML');
 
     test.done();
+  },
+  stringparams: function(test) {
+    'use strict';
+    test.expect(1);
+
+    var result = grunt.file.read('tmp/stringparams.html');
+    var expected = grunt.file.read('test/expected/stringparams.html');
+    test.equal(result, expected, 'should pass string params to stylesheet');
+
+    test.done();
   }
 };
 
