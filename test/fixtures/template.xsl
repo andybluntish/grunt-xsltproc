@@ -2,6 +2,7 @@
   <xsl:output method="html" omit-xml-declaration="yes" encoding="utf-8" indent="yes" media-type="text/html" />
 
   <xsl:param name="title" select="/catalogue/@title" />
+  <xsl:param name="fav" />
 
   <xsl:template match="/catalogue">
     <html>
@@ -11,6 +12,9 @@
     <body>
       <header role="banner">
         <h1><xsl:value-of select="$title" /></h1>
+        <xsl:if test="$fav">
+          <p>My current favourite is "<xsl:value-of select="$fav" />"</p>
+        </xsl:if>
       </header>
       <div role="main">
         <ul class="albums">

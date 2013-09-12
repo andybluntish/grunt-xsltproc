@@ -38,6 +38,16 @@ module.exports = function(grunt) {
           'tmp/compile.html': ['test/fixtures/data.xml']
         }
       },
+      params: {
+        files: {
+          'tmp/params.html': ['test/fixtures/data.xml']
+        },
+        options: {
+          params: {
+            'fav': '/catalogue/album[@id="3"]/title'
+          }
+        }
+      },
       stringparams: {
         files: {
           'tmp/stringparams.html': ['test/fixtures/data.xml']

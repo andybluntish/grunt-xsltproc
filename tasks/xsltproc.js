@@ -40,6 +40,14 @@ module.exports = function(grunt) {
         // Call xsltproc
         args.unshift('xsltproc');
 
+        // Add params
+        if (options.params) {
+          grunt.util._.forOwn(options.params, function(value, key) {
+            args.push('--param');
+            args.push(key, value);
+          });
+        }
+
         // Add string params
         if (options.stringparams) {
           grunt.util._.forOwn(options.stringparams, function(value, key) {

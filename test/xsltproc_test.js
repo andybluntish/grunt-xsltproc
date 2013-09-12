@@ -20,6 +20,16 @@ exports.xsltproc = {
     test.equal(result, expected, 'should pass string params to stylesheet');
 
     test.done();
+  },
+  params: function(test) {
+    'use strict';
+    test.expect(1);
+
+    var result = grunt.file.read('tmp/params.html');
+    var expected = grunt.file.read('test/expected/params.html');
+    test.equal(result, expected, 'should pass params to stylesheet');
+
+    test.done();
   }
 };
 
