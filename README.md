@@ -42,6 +42,16 @@ Type: `String`
 
 Path to the XSLT stylesheet to apply to the files.
 
+#### options.params
+Type: `Object`
+
+Pass an object of parameter name/value pairs to the stylesheet. Parameters are passed directly to the `xsltproc` call with the `--param` flag.
+
+#### options.stringparams
+Type: `Object`
+
+Pass an object of string parameter name/value pairs to the stylesheet. Parameters are passed directly to the `xsltproc` call with the `--stringparam` flag.
+
 ### Usage Examples
 
 #### Single file
@@ -77,6 +87,46 @@ grunt.initConfig({
         dest: 'tmp',
         ext: '.html'
       }]
+    }
+  }
+})
+```
+
+#### Passing parameters
+
+```js
+grunt.initConfig({
+  xsltproc: {
+    options: {
+      stylesheet: 'test/fixtures/compiler.xsl',
+      params: {
+        'fav': '/catalogue/album[@id="3"]/title'
+      }
+    },
+    compile: {
+      files: {
+        'tmp/compile.html': ['test/fixtures/compile.xml']
+      }
+    }
+  }
+})
+```
+
+#### Passing string parameters
+
+```js
+grunt.initConfig({
+  xsltproc: {
+    options: {
+      stylesheet: 'test/fixtures/compiler.xsl',
+      stringparams: {
+        'title': 'My Music'
+      }
+    },
+    compile: {
+      files: {
+        'tmp/compile.html': ['test/fixtures/compile.xml']
+      }
     }
   }
 })
