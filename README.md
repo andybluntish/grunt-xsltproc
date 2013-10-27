@@ -137,5 +137,6 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
+ * 2013-09-13   v0.2.1   Add documentation for passing in parameters. Update `package.json`.
  * 2013-09-13   v0.2.0   Pass params to the stylesheet via the options object.
  * 2013-09-08   v0.1.0   Initial release.
