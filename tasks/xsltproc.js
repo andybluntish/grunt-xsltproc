@@ -51,6 +51,11 @@ module.exports = function(grunt) {
           args.push('--stringparam');
           args.push(key, value);
         });
+        
+        // Add XInclude support
+        if (options.xinclude) {
+          args.push('--xinclude');
+        }
 
         // Add file paths to the args
         args.push('--output', file.dest);
