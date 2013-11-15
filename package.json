@@ -40,8 +40,10 @@
   "keywords": [
     "gruntplugin",
     "xslt",
+    "xsl",
     "xml",
     "html",
+    "transform",
     "compile",
     "preprocessor"
   ]
