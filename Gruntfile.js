@@ -35,12 +35,12 @@ module.exports = function(grunt) {
       },
       compile: {
         files: {
-          'tmp/compile.html': ['test/fixtures/data.xml']
+          'tmp/compile.html': ['test/fixtures/data/albums.xml']
         }
       },
       params: {
         files: {
-          'tmp/params.html': ['test/fixtures/data.xml']
+          'tmp/params.html': ['test/fixtures/data/albums.xml']
         },
         options: {
           params: {
@@ -50,12 +50,20 @@ module.exports = function(grunt) {
       },
       stringparams: {
         files: {
-          'tmp/stringparams.html': ['test/fixtures/data.xml']
+          'tmp/stringparams.html': ['test/fixtures/data/albums.xml']
         },
         options: {
           stringparams: {
             'title': 'My Music'
           }
+        }
+      },
+      xinclude: {
+        files: {
+          'tmp/xinclude.html': ['test/fixtures/data/track_lists.xml']
+        },
+        options: {
+          xinclude: true
         }
       }
     },

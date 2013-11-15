@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<catalogue title="My Albums" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <album id="1">
+    <title>Are You Experienced</title>
+    <artist>The Jimi Hendrix Experience</artist>
+    <year>1967</year>
+    <link>http://en.wikipedia.org/wiki/Are_You_Experienced</link>
+    <xi:include href="albums/1.xml"/>
+  </album>
+  <album id="2">
+    <title>White Blood Cells</title>
+    <artist>The White Stripes</artist>
+    <year>2001</year>
+    <link>http://en.wikipedia.org/wiki/White_Blood_Cells_(album)</link>
+    <xi:include href="albums/2.xml"/>
+  </album>
+  <album id="3">
+    <title>Thickfreakness</title>
+    <artist>The Black Keys</artist>
+    <year>2003</year>
+    <link>http://en.wikipedia.org/wiki/Thickfreakness</link>
+    <xi:include href="albums/3.xml"/>
+  </album>
+</catalogue>

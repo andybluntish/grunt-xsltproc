@@ -30,6 +30,16 @@ exports.xsltproc = {
     test.equal(result, expected, 'should pass params to stylesheet');
 
     test.done();
+  },
+  xinclude: function(test) {
+    'use strict';
+    test.expect(1);
+
+    var result = grunt.file.read('tmp/xinclude.html');
+    var expected = grunt.file.read('test/expected/xinclude.html');
+    test.equal(result, expected, 'should enable the use of xincludes');
+
+    test.done();
   }
 };
 

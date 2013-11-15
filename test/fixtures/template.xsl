@@ -29,8 +29,18 @@
     <li class="album">
       <h2><xsl:value-of select="./artist" /></h2>
       <p><a href="{./link}"><xsl:value-of select="./title" /> (<xsl:value-of select="./year" />)</a></p>
+      <xsl:apply-templates select="tracks" />
     </li>
   </xsl:template>
 
-</xsl:stylesheet>
+  <xsl:template match="tracks">
+    <ol class="tracks">
+      <xsl:apply-templates />
+    </ol>
+  </xsl:template>
 
+  <xsl:template match="track">
+    <li><xsl:value-of select="." /> (<xsl:value-of select="@length" />)</li>
+  </xsl:template>
+
+</xsl:stylesheet>

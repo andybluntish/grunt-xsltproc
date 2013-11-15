@@ -132,11 +132,31 @@ grunt.initConfig({
 })
 ```
 
+#### XInclude
+
+Process the input document using the XInclude specification.
+
+```js
+grunt.initConfig({
+  xsltproc: {
+    options: {
+      stylesheet: 'test/fixtures/compiler.xsl',
+      xinclude: true
+    },
+    compile: {
+      files: {
+        'tmp/compile.html': ['test/fixtures/compile.xml']
+      }
+    }
+  }
+})
+```
+
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
 
- * 2013-09-13   v0.2.1   Add documentation for passing in parameters. Update `package.json`.
+ * 2013-10-26   v0.2.1   Add documentation for passing in parameters. Update `package.json`.
  * 2013-09-13   v0.2.0   Pass params to the stylesheet via the options object.
  * 2013-09-08   v0.1.0   Initial release.
