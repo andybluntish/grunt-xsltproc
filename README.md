@@ -52,6 +52,11 @@ Type: `Object`
 
 Pass an object of string parameter name/value pairs to the stylesheet. Parameters are passed directly to the `xsltproc` call with the `--stringparam` flag.
 
+#### options.xinclude
+Type: `Boolean`
+
+Process the input document using the XInclude specification. More details on this can be found in the [XInclude specification](http://www.w3.org/TR/xinclude/).
+
 ### Usage Examples
 
 #### Single file
