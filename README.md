@@ -20,7 +20,18 @@ grunt.loadNpmTasks('grunt-xsltproc');
 ## The "xsltproc" task
 
 ### Overview
-In your project's Gruntfile, add a section named `xsltproc` to the data object passed into `grunt.initConfig()`.
+
+Run this task with the `grunt xsltproc` command.
+
+#### xsltproc
+
+[xltproc](http://xmlsoft.org/XSLT/xsltproc.html) is an open-source command line tool for applying XSLT stylesheets to XML documents.
+
+This task requires you to have `xsltproc` installed. If you're on OS X or Linux you probably already have it installed. You can check by running `xsltproc -version` in your terminal.
+
+#### Setup
+
+First, ensure you have `xsltproc` installed. Then, in your project's Gruntfile, add a section named `xsltproc` to the data object passed into `grunt.initConfig()`.
 
 ```js
 grunt.initConfig({
@@ -30,8 +41,8 @@ grunt.initConfig({
     },
     your_target: {
       // Target-specific file lists and/or options go here.
-    },
-  },
+    }
+  }
 })
 ```
 
