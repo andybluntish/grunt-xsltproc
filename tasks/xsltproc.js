@@ -56,6 +56,11 @@ module.exports = function(grunt) {
         if (options.xinclude) {
           args.push('--xinclude');
         }
+        
+        // Add novalid support
+        if (options.novalid) {
+          args.push('--novalid');
+        }
 
         // Add file paths to the args
         args.push('--output', file.dest);
