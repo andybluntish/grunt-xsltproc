@@ -68,6 +68,11 @@ Type: `Boolean`
 
 Process the input document using the XInclude specification. More details on this can be found in the [XInclude specification](http://www.w3.org/TR/xinclude/).
 
+#### options.novalid
+Type: `Boolean`
+
+Process the input document skipping the DTD loading phase.
+
 ### Usage Examples
 
 #### Single file
