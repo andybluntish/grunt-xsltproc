@@ -40,6 +40,16 @@ exports.xsltproc = {
     test.equal(result, expected, 'should enable the use of xincludes');
 
     test.done();
+  },
+  novalid: function(test) {
+    'use strict';
+    test.expect(1);
+
+    var result = grunt.file.read('tmp/novalid.html');
+    var expected = grunt.file.read('test/expected/compile.html');
+    test.equal(result, expected, 'should enable the use of novalid');
+
+    test.done();
   }
 };
 
