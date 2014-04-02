@@ -51,12 +51,17 @@ module.exports = function(grunt) {
           args.push('--stringparam');
           args.push(key, value);
         });
-        
+
         // Add XInclude support
         if (options.xinclude) {
           args.push('--xinclude');
         }
-        
+
+        // Add XInclude support for stylesheets
+        if (options.xincludestyle) {
+          args.push('--xincludestyle');
+        }
+
         // Add novalid support
         if (options.novalid) {
           args.push('--novalid');

@@ -41,6 +41,16 @@ exports.xsltproc = {
 
     test.done();
   },
+  xincludestyle: function(test) {
+    'use strict';
+    test.expect(1);
+
+    var result = grunt.file.read('tmp/xincludestyle.html');
+    var expected = grunt.file.read('test/expected/xincludestyle.html');
+    test.equal(result, expected, 'should enable the use of xincludes in stylesheets');
+
+    test.done();
+  },
   novalid: function(test) {
     'use strict';
     test.expect(1);

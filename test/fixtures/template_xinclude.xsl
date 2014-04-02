@@ -1,4 +1,4 @@
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xi="http://www.w3.org/2001/XInclude">
   <xsl:output method="html" omit-xml-declaration="yes" encoding="utf-8" indent="yes" media-type="text/html" />
 
   <xsl:param name="title" select="/catalogue/@title" />
@@ -21,6 +21,7 @@
           <xsl:apply-templates select="./album" />
         </ul>
       </div>
+      <xi:include href="footer.html" />
     </body>
     </html>
   </xsl:template>

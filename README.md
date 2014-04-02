@@ -25,7 +25,7 @@ Run this task with the `grunt xsltproc` command.
 
 #### xsltproc
 
-[xltproc](http://xmlsoft.org/XSLT/xsltproc.html) is an open-source command line tool for applying XSLT stylesheets to XML documents.
+[xsltproc](http://xmlsoft.org/XSLT/xsltproc.html) is an open-source command line tool for applying XSLT stylesheets to XML documents.
 
 This task requires you to have `xsltproc` installed. If you're on OS X or Linux you probably already have it installed. You can check by running `xsltproc -version` in your terminal.
 
@@ -67,6 +67,11 @@ Pass an object of string parameter name/value pairs to the stylesheet. Parameter
 Type: `Boolean`
 
 Process the input document using the XInclude specification. More details on this can be found in the [XInclude specification](http://www.w3.org/TR/xinclude/).
+
+#### options.xincludestyle
+Type: `Boolean`
+
+Process the stylesheet using the XInclude specification.
 
 #### options.novalid
 Type: `Boolean`
@@ -165,6 +170,26 @@ grunt.initConfig({
       xinclude: true
     },
     compile: {
+      files: {
+        'tmp/compile.html': ['test/fixtures/compile.xml']
+      }
+    }
+  }
+})
+```
+
+Process the stylesheet using the XInclude specification.
+
+```js
+grunt.initConfig({
+  xsltproc: {
+    options: {
+      xincludestyle: true
+    },
+    compile: {
+      options: {
+        stylesheet: 'test/fixtures/compiler.xsl'
+      }
       files: {
         'tmp/compile.html': ['test/fixtures/compile.xml']
       }
