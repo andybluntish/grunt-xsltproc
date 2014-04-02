@@ -68,6 +68,11 @@ Type: `Boolean`
 
 Process the input document using the XInclude specification. More details on this can be found in the [XInclude specification](http://www.w3.org/TR/xinclude/).
 
+#### options.xincludestyle
+Type: `Boolean`
+
+Process the stylesheet using the XInclude specification.
+
 #### options.novalid
 Type: `Boolean`
 
@@ -165,6 +170,26 @@ grunt.initConfig({
       xinclude: true
     },
     compile: {
+      files: {
+        'tmp/compile.html': ['test/fixtures/compile.xml']
+      }
+    }
+  }
+})
+```
+
+Process the stylesheet using the XInclude specification.
+
+```js
+grunt.initConfig({
+  xsltproc: {
+    options: {
+      xinclude: true
+    },
+    compile: {
+      options: {
+        stylesheet: 'test/fixtures/compiler.xsl'
+      }
       files: {
         'tmp/compile.html': ['test/fixtures/compile.xml']
       }
