@@ -184,7 +184,7 @@ Process the stylesheet using the XInclude specification.
 grunt.initConfig({
   xsltproc: {
     options: {
-      xinclude: true
+      xincludestyle: true
     },
     compile: {
       options: {
