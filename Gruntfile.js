@@ -66,6 +66,15 @@ module.exports = function(grunt) {
           xinclude: true
         }
       },
+      xincludestyle: {
+        files: {
+          'tmp/xincludestyle.html': ['test/fixtures/data/albums.xml']
+        },
+        options: {
+          stylesheet: 'test/fixtures/template_xinclude.xsl',
+          xincludestyle: true
+        }
+      },
       novalid: {
         files: {
           'tmp/novalid.html': ['test/fixtures/data/albums.xml']
