@@ -25,7 +25,7 @@ Run this task with the `grunt xsltproc` command.
 
 #### xsltproc
 
-[xltproc](http://xmlsoft.org/XSLT/xsltproc.html) is an open-source command line tool for applying XSLT stylesheets to XML documents.
+[xsltproc](http://xmlsoft.org/XSLT/xsltproc.html) is an open-source command line tool for applying XSLT stylesheets to XML documents.
 
 This task requires you to have `xsltproc` installed. If you're on OS X or Linux you probably already have it installed. You can check by running `xsltproc -version` in your terminal.
 
