@@ -78,6 +78,12 @@ Type: `Boolean`
 
 Process the input document skipping the DTD loading phase.
 
+
+#### options.filepath
+Type: `Boolean`
+
+Pass the grunt filepath as stringparam to the XSLT.
+
 ### Usage Examples
 
 #### Single file
@@ -197,6 +203,44 @@ grunt.initConfig({
   }
 })
 ```
+
+#### filepath
+
+Process the input documents and using the filepath xsl:param.
+
+```js
+grunt.initConfig({
+  xsltproc: {
+    compile: {
+      options: {
+        stylesheet: 'test/fixtures/template_filepath.xsl'
+        filepath: true
+      },
+      files: [{
+        expand: true,
+        cwd: 'test/fixtures',
+        src: '*.xml',
+        dest: 'tmp',
+        ext: '.html'
+      }]
+    }
+  }
+})
+```
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <xsl:output method="xml" encoding="utf-8" indent="yes" omit-xml-declaration="yes"/>
+
+  <xsl:param name="filepath"/>
+  
+  <xsl:template match="/">
+    ...
+  </xsl:template>
+</xsl:stylesheet>
+```
+
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).

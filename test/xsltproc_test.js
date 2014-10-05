@@ -60,6 +60,16 @@ exports.xsltproc = {
     test.equal(result, expected, 'should enable the use of novalid');
 
     test.done();
+  },
+  filepath: function(test) {
+    'use strict';
+    test.expect(1);
+
+    var result = grunt.file.read('tmp/filepath.html');
+    var expected = grunt.file.read('test/expected/filepath.html');
+    test.equal(result, expected, 'should enable the use of filepath');
+
+    test.done();
   }
 };
 
