@@ -82,6 +82,15 @@ module.exports = function(grunt) {
         options: {
           novalid: true
         }
+      },
+      filepath: {
+        files: {
+          'tmp/filepath.html': ['test/fixtures/data/albums.xml']
+        },
+        options: {
+          filepath: true,
+          stylesheet: 'test/fixtures/template_filepath.xsl'
+        }
       }
     },
 
