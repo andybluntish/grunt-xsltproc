@@ -73,6 +73,11 @@ module.exports = function(grunt) {
           args.push('--novalid');
         }
 
+        // the input document is(are) an HTML file(s)
+        if (options.html) {
+          args.push('--html');
+        }
+
         // Add file paths to the args
         args.push('--output', file.dest);
         args.push(options.stylesheet);
