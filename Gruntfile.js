@@ -91,6 +91,15 @@ module.exports = function(grunt) {
           filepath: true,
           stylesheet: 'test/fixtures/template_filepath.xsl'
         }
+      },
+      html: {
+        files: {
+          'tmp/html.html': ['test/fixtures/html.html']
+        },
+        options: {
+          html: true,
+          stylesheet: 'test/fixtures/html.xsl'
+        }
       }
     },
 

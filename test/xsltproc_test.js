@@ -70,6 +70,17 @@ exports.xsltproc = {
     test.equal(result, expected, 'should enable the use of filepath');
 
     test.done();
+  },
+  html: function(test) {
+    'use strict';
+    test.expect(1);
+
+    var result = grunt.file.read('tmp/html.html');
+    var expected = grunt.file.read('test/expected/html.html');
+    test.equal(result, expected, 'should enable the use of html');
+
+    test.done();
   }
+  
 };
 

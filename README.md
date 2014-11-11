@@ -84,6 +84,13 @@ Type: `Boolean`
 
 Pass the grunt filepath as stringparam to the XSLT.
 
+
+#### options.html
+Type: `Boolean`
+
+The input document is(are) an HTML file(s).
+
+
 ### Usage Examples
 
 #### Single file
@@ -247,6 +254,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
+ * 2014-11-10   v0.4.2   Add option to parse input as HTML.
  * 2014-10-05   v0.4.1   Add option for passing the grunt filepath as stringparam.
  * 2014-04-21   v0.4.0   Add option to use XIncludestyle.
  * 2013-11-16   v0.3.0   Enable processing using the XInclude specification.
