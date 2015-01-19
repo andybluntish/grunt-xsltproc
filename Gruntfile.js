@@ -100,6 +100,14 @@ module.exports = function(grunt) {
           html: true,
           stylesheet: 'test/fixtures/html.xsl'
         }
+      },
+      inline: {
+        options: {
+          stylesheet: null
+        },
+        files: {
+          'tmp/inline.html': ['test/fixtures/data/albums.xml']
+        }
       }
     },
 

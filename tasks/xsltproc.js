@@ -14,7 +14,7 @@ module.exports = function(grunt) {
     var options = this.options();
 
     // Check for the stylesheet file
-    if ( !options.stylesheet || !grunt.file.exists(options.stylesheet) ) {
+    if ( options.stylesheet && !grunt.file.exists(options.stylesheet) ) {
       grunt.log.error('Stylesheet file "' + options.stylesheet + '" not found.');
       return false;
     }
@@ -51,7 +51,7 @@ module.exports = function(grunt) {
           args.push('--stringparam');
           args.push(key, value);
         });
-        
+
         //  grunt filepath as stringparam
         if (options.filepath) {
           args.push('--stringparam');
@@ -80,7 +80,13 @@ module.exports = function(grunt) {
 
         // Add file paths to the args
         args.push('--output', file.dest);
-        args.push(options.stylesheet);
+
+        // If a stylesheet has been specified, use it
+        //   otherwise fallback to linked stylesheets
+        if (options.stylesheet) {
+          args.push(options.stylesheet);
+        }
+
         args.push(filepath);
       });
 
