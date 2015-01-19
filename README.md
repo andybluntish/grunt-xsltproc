@@ -49,9 +49,9 @@ grunt.initConfig({
 ### Options
 
 #### options.stylesheet
-Type: `String`
+Type: `String` or `false`
 
-Path to the XSLT stylesheet to apply to the files.
+Path to the XSLT stylesheet to apply to the files. If `options.stylesheet` evaluates to `false`, `xsltproc` will fallback to stylesheets linked from the target document.
 
 #### options.params
 Type: `Object`
@@ -241,7 +241,7 @@ grunt.initConfig({
   <xsl:output method="xml" encoding="utf-8" indent="yes" omit-xml-declaration="yes"/>
 
   <xsl:param name="filepath"/>
-  
+
   <xsl:template match="/">
     ...
   </xsl:template>
