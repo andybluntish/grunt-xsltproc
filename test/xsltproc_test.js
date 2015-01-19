@@ -80,7 +80,15 @@ exports.xsltproc = {
     test.equal(result, expected, 'should enable the use of html');
 
     test.done();
-  }
-  
-};
+  },
+  inline: function(test) {
+    'use strict';
+    test.expect(1);
 
+    var result = grunt.file.read('tmp/inline.html');
+    var expected = grunt.file.read('test/expected/simple-list.html');
+    test.equal(result, expected, 'should use inline stylesheet if none specified in options');
+
+    test.done();
+  }
+};
