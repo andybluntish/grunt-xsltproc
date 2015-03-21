@@ -1,4 +1,4 @@
-# grunt-xsltproc
+# grunt-xsltproc [![Build Status](https://travis-ci.org/andybluntish/grunt-xsltproc.svg)](https://travis-ci.org/andybluntish/grunt-xsltproc)
 
 > Apply XSLT stylesheets to XML documents.
 
