@@ -3,7 +3,7 @@
 > Apply XSLT stylesheets to XML documents.
 
 ## Getting Started
-This plugin requires Grunt `~0.4.1`
+This plugin requires Grunt `>=0.4.1`
 
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
@@ -254,6 +254,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
+ * 2016-02-22   v0.6.0   Update peerDependencies to support Grunt 1.0.
  * 2015-03-21   v0.5.1   Setup Travis CI.
  * 2015-01-19   v0.5.0   Fallback to inline stylesheets.
  * 2014-11-10   v0.4.2   Add option to parse input as HTML.
