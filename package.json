@@ -27,6 +27,7 @@
   },
   "scripts": {
     "grunt": "grunt",
+    "lint": "grunt lint",
     "test": "grunt test"
   },
   "devDependencies": {

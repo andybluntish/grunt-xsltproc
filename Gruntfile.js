@@ -121,6 +121,9 @@ module.exports = function (grunt) {
   // plugin's task(s), then test the result.
   grunt.registerTask("test", ["clean", "xsltproc", "nodeunit"]);
 
+  // Lint
+  grunt.registerTask("lint", ["eslint"]);
+
   // By default, lint and run all tests.
   grunt.registerTask("default", ["eslint", "test"]);
 };
