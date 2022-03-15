@@ -1,8 +1,9 @@
-# grunt-xsltproc [![Build Status](https://travis-ci.org/andybluntish/grunt-xsltproc.svg)](https://travis-ci.org/andybluntish/grunt-xsltproc)
+# grunt-xsltproc
 
 > Apply XSLT stylesheets to XML documents.
 
 ## Getting Started
+
 This plugin requires Grunt `>=0.4.1`
 
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
@@ -14,7 +15,7 @@ npm install grunt-xsltproc --save-dev
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadNpmTasks('grunt-xsltproc');
+grunt.loadNpmTasks("grunt-xsltproc");
 ```
 
 ## The "xsltproc" task
@@ -41,55 +42,60 @@ grunt.initConfig({
     },
     your_target: {
       // Target-specific file lists and/or options go here.
-    }
-  }
-})
+    },
+  },
+});
 ```
 
 ### Options
 
 #### options.stylesheet
+
 Type: `String` or `false`
 
 Path to the XSLT stylesheet to apply to the files. If `options.stylesheet` evaluates to `false`, `xsltproc` will fallback to stylesheets linked from the target document.
 
 #### options.params
+
 Type: `Object`
 
 Pass an object of parameter name/value pairs to the stylesheet. Parameters are passed directly to the `xsltproc` call with the `--param` flag.
 
 #### options.stringparams
+
 Type: `Object`
 
 Pass an object of string parameter name/value pairs to the stylesheet. Parameters are passed directly to the `xsltproc` call with the `--stringparam` flag.
 
 #### options.xinclude
+
 Type: `Boolean`
 
 Process the input document using the XInclude specification. More details on this can be found in the [XInclude specification](http://www.w3.org/TR/xinclude/).
 
 #### options.xincludestyle
+
 Type: `Boolean`
 
 Process the stylesheet using the XInclude specification.
 
 #### options.novalid
+
 Type: `Boolean`
 
 Process the input document skipping the DTD loading phase.
 
-
 #### options.filepath
+
 Type: `Boolean`
 
 Pass the grunt filepath as stringparam to the XSLT.
 
-
 #### options.html
+
 Type: `Boolean`
 
 The input document is(are) an HTML file(s).
-
 
 ### Usage Examples
 
@@ -99,15 +105,15 @@ The input document is(are) an HTML file(s).
 grunt.initConfig({
   xsltproc: {
     options: {
-      stylesheet: 'test/fixtures/compiler.xsl'
+      stylesheet: "test/fixtures/compiler.xsl",
     },
     compile: {
       files: {
-        'tmp/compile.html': ['test/fixtures/compile.xml']
-      }
-    }
-  }
-})
+        "tmp/compile.html": ["test/fixtures/compile.xml"],
+      },
+    },
+  },
+});
 ```
 
 #### Directory of files
@@ -116,19 +122,21 @@ grunt.initConfig({
 grunt.initConfig({
   xsltproc: {
     options: {
-      stylesheet: 'test/fixtures/compiler.xsl'
+      stylesheet: "test/fixtures/compiler.xsl",
     },
     compile: {
-      files: [{
-        expand: true,
-        cwd: 'test/fixtures',
-        src: '*.xml',
-        dest: 'tmp',
-        ext: '.html'
-      }]
-    }
-  }
-})
+      files: [
+        {
+          expand: true,
+          cwd: "test/fixtures",
+          src: "*.xml",
+          dest: "tmp",
+          ext: ".html",
+        },
+      ],
+    },
+  },
+});
 ```
 
 #### Passing parameters
@@ -137,18 +145,18 @@ grunt.initConfig({
 grunt.initConfig({
   xsltproc: {
     options: {
-      stylesheet: 'test/fixtures/compiler.xsl',
+      stylesheet: "test/fixtures/compiler.xsl",
       params: {
-        'fav': '/catalogue/album[@id="3"]/title'
-      }
+        fav: '/catalogue/album[@id="3"]/title',
+      },
     },
     compile: {
       files: {
-        'tmp/compile.html': ['test/fixtures/compile.xml']
-      }
-    }
-  }
-})
+        "tmp/compile.html": ["test/fixtures/compile.xml"],
+      },
+    },
+  },
+});
 ```
 
 #### Passing string parameters
@@ -157,18 +165,18 @@ grunt.initConfig({
 grunt.initConfig({
   xsltproc: {
     options: {
-      stylesheet: 'test/fixtures/compiler.xsl',
+      stylesheet: "test/fixtures/compiler.xsl",
       stringparams: {
-        'title': 'My Music'
-      }
+        title: "My Music",
+      },
     },
     compile: {
       files: {
-        'tmp/compile.html': ['test/fixtures/compile.xml']
-      }
-    }
-  }
-})
+        "tmp/compile.html": ["test/fixtures/compile.xml"],
+      },
+    },
+  },
+});
 ```
 
 #### XInclude
@@ -179,16 +187,16 @@ Process the input document using the XInclude specification.
 grunt.initConfig({
   xsltproc: {
     options: {
-      stylesheet: 'test/fixtures/compiler.xsl',
-      xinclude: true
+      stylesheet: "test/fixtures/compiler.xsl",
+      xinclude: true,
     },
     compile: {
       files: {
-        'tmp/compile.html': ['test/fixtures/compile.xml']
-      }
-    }
-  }
-})
+        "tmp/compile.html": ["test/fixtures/compile.xml"],
+      },
+    },
+  },
+});
 ```
 
 Process the stylesheet using the XInclude specification.
@@ -197,18 +205,18 @@ Process the stylesheet using the XInclude specification.
 grunt.initConfig({
   xsltproc: {
     options: {
-      xincludestyle: true
+      xincludestyle: true,
     },
     compile: {
       options: {
-        stylesheet: 'test/fixtures/compiler.xsl'
-      }
+        stylesheet: "test/fixtures/compiler.xsl",
+      },
       files: {
-        'tmp/compile.html': ['test/fixtures/compile.xml']
-      }
-    }
-  }
-})
+        "tmp/compile.html": ["test/fixtures/compile.xml"],
+      },
+    },
+  },
+});
 ```
 
 #### filepath
@@ -248,19 +256,19 @@ grunt.initConfig({
 </xsl:stylesheet>
 ```
 
-
 ## Contributing
+
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
 
- * 2016-02-22   v0.6.0   Update peerDependencies to support Grunt 1.0.
- * 2015-03-21   v0.5.1   Setup Travis CI.
- * 2015-01-19   v0.5.0   Fallback to inline stylesheets.
- * 2014-11-10   v0.4.2   Add option to parse input as HTML.
- * 2014-10-05   v0.4.1   Add option for passing the grunt filepath as stringparam.
- * 2014-04-21   v0.4.0   Add option to use XIncludestyle.
- * 2013-11-16   v0.3.0   Enable processing using the XInclude specification.
- * 2013-10-26   v0.2.1   Add documentation for passing in parameters. Update `package.json`.
- * 2013-09-13   v0.2.0   Pass params to the stylesheet via the options object.
- * 2013-09-08   v0.1.0   Initial release.
+- 2016-02-22   v0.6.0   Update peerDependencies to support Grunt 1.0.
+- 2015-03-21   v0.5.1   Setup Travis CI.
+- 2015-01-19   v0.5.0   Fallback to inline stylesheets.
+- 2014-11-10   v0.4.2   Add option to parse input as HTML.
+- 2014-10-05   v0.4.1   Add option for passing the grunt filepath as stringparam.
+- 2014-04-21   v0.4.0   Add option to use XIncludestyle.
+- 2013-11-16   v0.3.0   Enable processing using the XInclude specification.
+- 2013-10-26   v0.2.1   Add documentation for passing in parameters. Update `package.json`.
+- 2013-09-13   v0.2.0   Pass params to the stylesheet via the options object.
+- 2013-09-08   v0.1.0   Initial release.
