@@ -262,6 +262,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
+- 2022-03-16   v1.0.0   Upgrade dependencies.
 - 2016-02-22   v0.6.0   Update peerDependencies to support Grunt 1.0.
 - 2015-03-21   v0.5.1   Setup Travis CI.
 - 2015-01-19   v0.5.0   Fallback to inline stylesheets.
