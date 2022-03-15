@@ -259,17 +259,3 @@ grunt.initConfig({
 ## Contributing
 
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
-
-## Release History
-
-- 2022-03-16   v1.0.0   Upgrade dependencies.
-- 2016-02-22   v0.6.0   Update peerDependencies to support Grunt 1.0.
-- 2015-03-21   v0.5.1   Setup Travis CI.
-- 2015-01-19   v0.5.0   Fallback to inline stylesheets.
-- 2014-11-10   v0.4.2   Add option to parse input as HTML.
-- 2014-10-05   v0.4.1   Add option for passing the grunt filepath as stringparam.
-- 2014-04-21   v0.4.0   Add option to use XIncludestyle.
-- 2013-11-16   v0.3.0   Enable processing using the XInclude specification.
-- 2013-10-26   v0.2.1   Add documentation for passing in parameters. Update `package.json`.
-- 2013-09-13   v0.2.0   Pass params to the stylesheet via the options object.
-- 2013-09-08   v0.1.0   Initial release.
