@@ -18,7 +18,7 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/andybluntish/grunt-xsltproc/blob/master/LICENSE-MIT"
+      "url": "https://github.com/andybluntish/grunt-xsltproc/blob/main/LICENSE-MIT"
     }
   ],
   "main": "Gruntfile.js",
