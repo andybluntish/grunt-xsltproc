@@ -28,7 +28,8 @@
   "scripts": {
     "grunt": "grunt",
     "lint": "grunt lint",
-    "test": "grunt test"
+    "test": "grunt test",
+    "fmt": "prettier --write ."
   },
   "devDependencies": {
     "eslint": "^8.11.0",
